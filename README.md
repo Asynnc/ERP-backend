@@ -17,14 +17,14 @@
   <p align="center">
     A study for the development of an ERP system
     <br />
-    <a href="https://github.com/Ellie-on/ERP"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Asynnc/ERP"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Ellie-on/ERP">View Demo</a>
+    <a href="https://github.com/Asynnc/ERP">View Demo</a>
     ·
-    <a href="https://github.com/Ellie-on/ERP/issues">Report Bug</a>
+    <a href="https://github.com/Asynnc/ERP/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Ellie-on/ERP/issues">Request Feature</a>
+    <a href="https://github.com/Asynnc/ERP/issues">Request Feature</a>
   </p>
 </p>
 
@@ -40,19 +40,19 @@
 <a href="https://dev.to/tonybsilvadev">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54373473?v=4" width="150px;" alt=""/>
  <br />
- <sub><b>Antônio Bernardino da Silva</b></sub></a> <a href="https://tonybsilvadev.medium.com/" title="Medium".</a>
+ <sub><b>Antônio Bernardino da Silva</b></sub></a> <a href="https://dev.to/tonybsilvadev/" title="Medium".</a>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Ellie-on/ERP.svg?style=for-the-badge
-[contributors-url]: https://github.com/Ellie-on/ERP/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Ellie-on/ERP.svg?style=for-the-badge
-[forks-url]: https://github.com/Ellie-on/ERP/network/members
-[stars-shield]: https://img.shields.io/github/stars/Ellie-on/ERP.svg?style=for-the-badge
-[stars-url]: https://github.com/Ellie-on/ERP/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Ellie-on/ERP.svg?style=for-the-badge
-[issues-url]: https://github.com/Ellie-on/ERP/issues
-[license-shield]: https://img.shields.io/github/license/Ellie-on/ERP.svg?style=for-the-badge
-[license-url]: https://github.com/Ellie-on/ERP/blob/master/LICENSE.md
+[contributors-shield]: https://img.shields.io/github/contributors/Asynnc/ERP.svg?style=for-the-badge
+[contributors-url]: https://github.com/Asynnc/ERP/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Asynnc/ERP.svg?style=for-the-badge
+[forks-url]: https://github.com/Asynnc/ERP/network/members
+[stars-shield]: https://img.shields.io/github/stars/Asynnc/ERP.svg?style=for-the-badge
+[stars-url]: https://github.com/Asynnc/ERP/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Asynnc/ERP.svg?style=for-the-badge
+[issues-url]: https://github.com/Asynnc/ERP/issues
+[license-shield]: https://img.shields.io/github/license/Asynnc/ERP.svg?style=for-the-badge
+[license-url]: https://github.com/Asynnc/ERP/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/tony-silva/
