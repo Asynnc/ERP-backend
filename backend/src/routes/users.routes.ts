@@ -1,7 +1,10 @@
 import { Router } from 'express';
+import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 import { CreateUserService } from '../services/users/CreateUserService'
 import { SearchUserService } from '../services/users/SearchUserService';
+
+
 
 const usersRouter = Router();
 
@@ -23,7 +26,7 @@ usersRouter.post('/', async (request, response) => {
 })
 
 // Rota responsável por listar todos os usuários
-usersRouter.get('/', async (request, response) => {
+usersRouter.get('/', ensureAuthenticated, async (request, response) => {
 
   const findUser = new SearchUserService();
   const users = await findUser.search();
@@ -32,7 +35,7 @@ usersRouter.get('/', async (request, response) => {
 
 })
 
-usersRouter.get('/find/:id', async (request, response) => {
+usersRouter.get('/find/:id', ensureAuthenticated,  async (request, response) => {
 
   const { id } = request.params
 
