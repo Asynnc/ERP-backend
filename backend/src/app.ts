@@ -15,6 +15,4 @@ app.use(routes);
 app.use(globalErrors);
 
 
-app.listen(3000, () => {
-  console.log('✅ listening on port 3000');
-});
+export { app };
