@@ -1,8 +1,7 @@
 import { getRepository } from 'typeorm';
 import { User } from '../../models/User';
 import AppError from '../../errors/AppError'
-import { hash } from 'bcryptjs';
-import { json } from 'stream/consumers';
+
 
 interface Request {
   id: string;
