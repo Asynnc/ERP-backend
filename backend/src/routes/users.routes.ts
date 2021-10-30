@@ -1,8 +1,9 @@
 import { Request, Response, Router } from 'express';
-import UploadConfig from '../config/uploads';
 import multer from 'multer';
+import UploadConfig from '../config/uploads';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 import { CreateUserService } from '../services/users/CreateUserService';
+import { DeleteUserService } from '../services/users/DeleteUserService';
 import { SearchUserService } from '../services/users/SearchUserService';
 import { UpdateAvatarUserService } from '../services/users/UpdateAvatarUserService';
 
@@ -39,7 +40,7 @@ usersRouter.get('/', ensureAuthenticated, async (request: Request, response: Res
 
 })
 
-usersRouter.get('/find/:id', ensureAuthenticated,  async (request: Request, response: Response) => {
+usersRouter.get('/find/:id', ensureAuthenticated, async (request: Request, response: Response) => {
 
   const { id } = request.params
 
@@ -52,7 +53,7 @@ usersRouter.get('/find/:id', ensureAuthenticated,  async (request: Request, resp
 
 })
 
-usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar') ,async (request: Request, response: Response) => {
+usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar'), async (request: Request, response: Response) => {
 
   // // Obter os dados do arquivo enviado
   // console.log(request.file)
@@ -69,6 +70,16 @@ usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar') ,async
 
   return response.json(user);
 
+})
+
+usersRouter.delete('/', ensureAuthenticated, async (request, response) => {
+  const deleteUserService = new DeleteUserService();
+
+  const { id } = request.body
+
+  await deleteUserService.delete({ id })
+
+  return response.json({ message: 'User has been deleted' })
 })
 
 export { usersRouter };

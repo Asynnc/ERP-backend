@@ -1,41 +1,35 @@
 import { getRepository } from 'typeorm';
 import { User } from '../../models/User';
-
+import AppError from '../../errors/AppError'
 import { hash } from 'bcryptjs';
+import { json } from 'stream/consumers';
 
 interface Request {
-  name: string;
-  email: string;
-  password: string;
+  id: string;
 }
 
 
 class DeleteUserService {
 
-  public async execute({ name, email, password }: Request): Promise<User> {
+  public async delete({ id }: Request): Promise<void> {
 
     const userRepository = getRepository(User);
 
     const checkUserExists = await userRepository.findOne({
-      where: { email },
+      where: { id },
     });
 
-    if (checkUserExists) {
-      throw new Error('Email address already used');
+    if (!checkUserExists) {
+      throw new Error('User not exists');
     }
 
-    const hashedPassword = await hash(password, 8);
+    try {
 
-    const user = userRepository.create({
-      name,
-      email,
-      password: hashedPassword,
-    });
+      await userRepository.delete({ id });
 
-    await userRepository.save(user);
-
-    return user;
-
+    } catch (error) {
+      new AppError('Error: ', 404, error)
+    }
   }
 }
 
