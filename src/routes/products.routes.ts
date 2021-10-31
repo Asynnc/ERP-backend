@@ -7,11 +7,11 @@ productsRouter.post('/', async (request: Request, response: Response) => {
 
   const { name, description, price } = request.body;
 
-  const createUser = new CreateProductService();
+  const createProduct = new CreateProductService();
 
-  const user = await createUser.execute({ name, description, price })
+  const product = await createProduct.execute({ name, description, price })
 
-  return response.json(user)
+  return response.json(product)
 
 })
 
