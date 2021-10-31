@@ -12,7 +12,7 @@ interface Request {
 class SearchUserService {
 
 
-  public async search() {
+  public async search(): Promise<User[]> {
     const userRepository = getRepository(User);
 
     const users = await userRepository.find();
