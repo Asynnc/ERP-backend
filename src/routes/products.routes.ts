@@ -1,22 +1,18 @@
-import { Router } from 'express'
+import { Request, Response, Router } from 'express'
 import { CreateProductService } from '../services/products/CreateProductService'
 
-const sessionsRouter = Router();
+const productsRouter = Router();
 
-sessionsRouter.post('/', async (request, response) => {
+productsRouter.post('/', async (request: Request, response: Response) => {
 
   const { name, description, price } = request.body;
 
-  const productService = new CreateProductService();
+  const createUser = new CreateProductService();
 
-  const product = productService.execute({
-    name,
-    description,
-    price
-  })
+  const user = await createUser.execute({ name, description, price })
 
-  return response.json(product);
+  return response.json(user)
 
 })
 
-export { sessionsRouter }
+export { productsRouter }

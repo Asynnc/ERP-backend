@@ -16,8 +16,8 @@ class CreateProductService {
       where: { name }
     })
 
-    if (!productExists) {
-      throw new AppError('Product does not exists', 404)
+    if (productExists) {
+      throw new AppError('Product already exists')
     }
 
     const product = productRepository.create({
