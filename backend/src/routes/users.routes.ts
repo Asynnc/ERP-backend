@@ -6,6 +6,7 @@ import { CreateUserService } from '../services/users/CreateUserService';
 import { DeleteUserService } from '../services/users/DeleteUserService';
 import { SearchUserService } from '../services/users/SearchUserService';
 import { UpdateAvatarUserService } from '../services/users/UpdateAvatarUserService';
+import { UpdatePasswordUserService } from '../services/users/UpdatePasswordUserSevice';
 
 
 
@@ -80,6 +81,23 @@ usersRouter.delete('/', ensureAuthenticated, async (request, response) => {
   await deleteUserService.delete({ id })
 
   return response.json({ message: 'User has been deleted' })
+})
+
+usersRouter.post('/settings/security',  ensureAuthenticated, async (request, response) => {
+
+  const { password, newPassword } = request.body;
+
+  const updatePasswordUse = new UpdatePasswordUserService();
+
+  const user = await updatePasswordUse.execute({
+    user_id: request.user.id,
+    password,
+    newPassword,
+  });
+
+  delete user.password;
+
+  return response.json(user);
 })
 
 export { usersRouter };
