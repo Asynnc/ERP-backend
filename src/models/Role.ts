@@ -3,7 +3,7 @@ import { BaseEntity } from "./BaseEntity";
 import { Permission } from "./Permission";
 
 @Entity("roles")
-export class Role extends BaseEntity {
+class Role extends BaseEntity {
   @Column()
   name: string;
 
@@ -18,3 +18,5 @@ export class Role extends BaseEntity {
   })
   permissions: Permission[];
 }
+
+export { Role }

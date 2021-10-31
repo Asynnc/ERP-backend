@@ -2,7 +2,7 @@ import { Entity, Column, CreateDateColumn, PrimaryColumn } from "typeorm";
 import { BaseEntity } from "./BaseEntity";
 
 @Entity("products")
-export class Product extends BaseEntity {
+class Product extends BaseEntity {
   @Column()
   name: string;
 
@@ -12,3 +12,5 @@ export class Product extends BaseEntity {
   @Column()
   price: number;
 }
+
+export { Product }
