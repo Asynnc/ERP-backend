@@ -1,17 +1,16 @@
-import { Entity,
-  PrimaryGeneratedColumn,
+import {
+  Entity,
   Column,
-  CreateDateColumn,
-  UpdateDateColumn
+  ManyToMany,
+  JoinTable
 } from 'typeorm';
 
-import { v4 as uuid } from 'uuid'
+import { BaseEntity } from './BaseEntity'
+import { Role } from './Role';
+import { Permission } from './Permission';
 
 @Entity('users')
-class User {
-
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+class User extends BaseEntity {
 
   @Column()
   name: string;
@@ -25,17 +24,22 @@ class User {
   @Column()
   avatar: string;
 
-  @CreateDateColumn()
-  createdAt: Date;
+  @ManyToMany(() => Role)
+  @JoinTable({
+    name: "users_roles",
+    joinColumns: [{ name: "user_id" }],
+    inverseJoinColumns: [{ name: "role_id" }],
+  })
+  roles: Role[];
 
-  @UpdateDateColumn()
-  updatedAt: Date;
+  @ManyToMany(() => Permission)
+  @JoinTable({
+    name: "users_permissions",
+    joinColumns: [{ name: "user_id" }],
+    inverseJoinColumns: [{ name: "permission_id" }],
+  })
+  permissions: Permission[];
 
-  constructor(){
-    if (!this.id){
-      this.id = uuid();
-    }
-  }
 }
 
 export { User }
