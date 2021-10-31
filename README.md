@@ -17,7 +17,7 @@
   <p align="center">
     A study for the development of an ERP system
     <br />
-    <a href="https://github.com/Asynnc/ERP"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Asynnc/ERP-backend/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Asynnc/ERP">View Demo</a>
