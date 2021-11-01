@@ -9,7 +9,7 @@ type ProductRequest = {
 };
 
 class CreateProductService {
-  async execute({ name, description, price }: ProductRequest) {
+  async execute({ name, description, price }: ProductRequest): Promise<Product> {
     const productRepository = getRepository(Product);
 
     const productExists = await productRepository.findOne({

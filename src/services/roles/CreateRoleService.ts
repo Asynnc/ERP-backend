@@ -8,7 +8,7 @@ interface RoleRequest {
 }
 
 class CreateRoleService {
-  async execute({ name, description }: RoleRequest): Promise<Role | Error> {
+  async execute({ name, description }: RoleRequest): Promise<Role> {
 
     const roleRepository = getRepository(Role);
 
