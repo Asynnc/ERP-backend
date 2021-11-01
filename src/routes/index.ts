@@ -5,7 +5,7 @@ import { sessionsRouter } from './sessions.routes';
 import { productsRouter } from './products.routes';
 import { rolesRouter } from './roles.routes';
 import { permissionsRouter } from './permissions.routes';
-import { acessControlRouter } from './accessControl.routes';
+import { accessControlRouter } from './accessControl.routes';
 
 const routes = Router();
 
@@ -15,7 +15,7 @@ routes.use('/sessions', sessionsRouter);
 routes.use('/products', productsRouter);
 routes.use('/roles', rolesRouter)
 routes.use('/permissions', permissionsRouter)
-routes.use('/access_control', acessControlRouter)
+routes.use('/access_control', accessControlRouter)
 
 
 

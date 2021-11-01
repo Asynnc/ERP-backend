@@ -2,9 +2,9 @@ import { Request, Response, Router } from 'express';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 import { CreateUserAccessControlListService } from '../services/access_control/CreateUserAccessControlListService';
 
-const acessControlRouter = Router();
+const accessControlRouter = Router();
 
-acessControlRouter.post('/', ensureAuthenticated, async (request: Request, response: Response) => {
+accessControlRouter.post('/', ensureAuthenticated, async (request: Request, response: Response) => {
 
   const user_id = request.user.id;
   const { roles, permissions } = request.body;
@@ -22,5 +22,5 @@ acessControlRouter.post('/', ensureAuthenticated, async (request: Request, respo
 
 })
 
-export { acessControlRouter };
+export { accessControlRouter };
 

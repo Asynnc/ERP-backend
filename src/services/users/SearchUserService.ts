@@ -26,7 +26,8 @@ class SearchUserService {
     const userRepository = getRepository(User);
 
     const checkUserExists = await userRepository.findOne({
-      where: { id }
+      where: { id },
+      relations: ["permissions", "roles"]
     })
 
     if (!checkUserExists) {
