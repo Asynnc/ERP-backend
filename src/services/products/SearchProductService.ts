@@ -1,6 +1,5 @@
 import { getRepository } from "typeorm";
 import { Product } from "../../models/Product";
-import { ProductRepository } from "../../repositories/ProductRepository";
 
 class SearchProductsService {
 

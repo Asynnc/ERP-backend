@@ -18,14 +18,6 @@ interface IResponse {
 
 class AuthenticateUserService {
 
-  /*
-  - [x] necessario email/senha
-  - [x] necessáio tipar
-  - [x] Veririfcar se o usuario existe
-  - [] Verificar se a senha esta correta
-  - [] necessário retornar um token
-  */
-
   // Serviço de autenticacao
   public async auth({ email, password }: IAuthService): Promise<IResponse> {
 

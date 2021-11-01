@@ -8,7 +8,7 @@ interface PermissionRequest {
 }
 
 class CreatePermissionService {
-  async execute({ name, description }: PermissionRequest): Promise<Permission | Error> {
+  async execute({ name, description }: PermissionRequest): Promise<Permission> {
 
     const permissionRepository = getRepository(Permission);
 

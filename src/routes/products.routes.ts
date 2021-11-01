@@ -1,11 +1,12 @@
 import { Request, Response, Router } from 'express'
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
+import { can, is } from '../middlewares/permissions';
 import { CreateProductService } from '../services/products/CreateProductService'
 import { SearchProductsService } from '../services/products/SearchProductService'
 
 const productsRouter = Router();
 
-productsRouter.post('/', async (request: Request, response: Response) => {
+productsRouter.post('/', ensureAuthenticated, can(["create_product"]), is(["Basic User"]), async (request: Request, response: Response) => {
 
   const { name, description, price } = request.body;
 
