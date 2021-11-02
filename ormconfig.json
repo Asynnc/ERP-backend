@@ -6,7 +6,11 @@
   "password": "123546",
   "database": "ERP",
   "entities": [
-    "./src/models/*.ts"
+    "./src/modules/user/model/*.ts",
+    "./src/modules/roles/model/*.ts",
+    "./src/modules/permissions/model/*.ts",
+    "./src/modules/products/model/*.ts",
+    "./src/modules/user/model/*.ts"
   ],
   "migrations": [
     "./src/database/migrations/*.ts"
