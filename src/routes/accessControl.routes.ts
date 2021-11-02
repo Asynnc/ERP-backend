@@ -18,7 +18,7 @@ accessControlRouter.post('/', ensureAuthenticated, async (request: Request, resp
       permissions
     });
 
-  return response.json(user_ACL)
+  return response.json(user_ACL);
 
 })
 

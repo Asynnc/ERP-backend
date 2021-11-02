@@ -1,7 +1,7 @@
 import { getRepository } from "typeorm";
+import AppError from '../../../utils/errors/AppError';
 import { User } from "../model/User";
 
-import AppError from '../../../utils/errors/AppError'
 
 
 
