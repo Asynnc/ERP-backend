@@ -12,6 +12,10 @@ class CreatePermissionService {
 
     const permissionRepository = getRepository(Permission);
 
+    if(name.length <= 0 || description.length <= 0){
+      throw new AppError("You must provide a name and description to permission.");
+    }
+
     const checkPermissionExists = await permissionRepository.findOne(
       { where: { name } }
     )
