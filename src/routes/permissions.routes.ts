@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
-import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
-import { CreatePermissionService } from '../services/permissions/CreatePermissionService';
+import { ensureAuthenticated } from '../utils/middlewares/ensureAuthenticated';
+import { CreatePermissionService } from '../modules/permissions/services/CreatePermissionService';
 
 const permissionsRouter = Router();
 

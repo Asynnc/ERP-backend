@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express';
-import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
-import { CreateRolePermissionService } from '../services/roles/CreateRolePermissionService';
-import { CreateRoleService } from '../services/roles/CreateRoleService';
+import { ensureAuthenticated } from '../utils/middlewares/ensureAuthenticated';
+import { CreateRolePermissionService } from '../modules/roles/services/CreateRolePermissionService';
+import { CreateRoleService } from '../modules/roles/services/CreateRoleService';
 
 const rolesRouter = Router();
 
