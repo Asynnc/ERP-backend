@@ -1,22 +1,18 @@
 import { Request, Response, Router } from 'express';
 import multer from 'multer';
 import UploadConfig from '../config/uploads';
-import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
-import { CreateUserService } from '../services/users/CreateUserService';
-import { DeleteUserService } from '../services/users/DeleteUserService';
-import { SearchUserService } from '../services/users/SearchUserService';
-import { UpdateAvatarUserService } from '../services/users/UpdateAvatarUserService';
-import { UpdatePasswordUserService } from '../services/users/UpdatePasswordUserSevice';
-
-
+import { ensureAuthenticated } from '../utils/middlewares/ensureAuthenticated';
+import { CreateUserService } from '../modules/user/services/CreateUserService';
+import { DeleteUserService } from '../modules/user/services/DeleteUserService';
+import { SearchUserService } from '../modules/user/services/SearchUserService';
+import { UpdateAvatarUserService } from '../modules/user/services/UpdateAvatarUserService';
+import { UpdatePasswordUserService } from '../modules/user/services/UpdatePasswordUserSevice';
 
 const usersRouter = Router();
-
 const upload = multer(UploadConfig);
 
-
 // Rota responsável por criar um usuário
-usersRouter.post('/', async (request, response) => {
+usersRouter.post('/', async (request: Request, response: Response) => {
 
 
   const { name, email, password } = request.body;
@@ -41,6 +37,7 @@ usersRouter.get('/', ensureAuthenticated, async (request: Request, response: Res
 
 })
 
+// Rota responsável por listar um usuário específico
 usersRouter.get('/find/:id', ensureAuthenticated, async (request: Request, response: Response) => {
 
   const { id } = request.params
@@ -54,6 +51,7 @@ usersRouter.get('/find/:id', ensureAuthenticated, async (request: Request, respo
 
 })
 
+// Rota responsável por atualizar o avatar do usuário
 usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar'), async (request: Request, response: Response) => {
 
   // // Obter os dados do arquivo enviado
@@ -73,7 +71,8 @@ usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar'), async
 
 })
 
-usersRouter.delete('/', ensureAuthenticated, async (request, response) => {
+// Rota responsável por deletar um usuário
+usersRouter.delete('/', ensureAuthenticated, async (request: Request, response: Response) => {
   const deleteUserService = new DeleteUserService();
 
   const { id } = request.body
@@ -83,7 +82,8 @@ usersRouter.delete('/', ensureAuthenticated, async (request, response) => {
   return response.json({ message: 'User has been deleted' })
 })
 
-usersRouter.post('/settings/security',  ensureAuthenticated, async (request, response) => {
+// Rota responsável por alterar a senha do usuário
+usersRouter.post('/settings/security',  ensureAuthenticated, async (request: Request, response: Response) => {
 
   const { password, newPassword } = request.body;
 
