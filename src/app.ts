@@ -3,7 +3,7 @@ import express from 'express';
 import 'express-async-errors';
 import 'reflect-metadata';
 import './database';
-import { globalErrors } from './middlewares/globalErrors';
+import { globalErrors } from './utils/middlewares/globalErrors';
 import { routes } from './routes';
 
 

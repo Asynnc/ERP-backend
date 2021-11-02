@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
-import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
-import { CreateUserAccessControlListService } from '../services/access_control/CreateUserAccessControlListService';
+import { ensureAuthenticated } from '../utils/middlewares/ensureAuthenticated';
+import { CreateUserAccessControlListService } from '../modules/access_control/service/CreateUserAccessControlListService';
 
 const accessControlRouter = Router();
 
