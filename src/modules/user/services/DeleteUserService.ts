@@ -1,16 +1,13 @@
-import { getRepository } from 'typeorm';
-import { User } from '../model/User';
-import AppError from '../../../utils/errors/AppError'
+import { getRepository } from "typeorm";
+import { User } from "../model/User";
+import AppError from "../../../utils/errors/AppError";
 
 interface Request {
   id: string;
 }
 
-
 class DeleteUserService {
-
   public async delete({ id }: Request): Promise<void> {
-
     const userRepository = getRepository(User);
 
     const checkUserExists = await userRepository.findOne({
@@ -18,13 +15,13 @@ class DeleteUserService {
     });
 
     if (!checkUserExists) {
-      throw new Error('User not exists');
+      throw new Error("User not exists");
     }
 
     try {
       await userRepository.delete({ id });
     } catch (error) {
-      new AppError('Error: ', 404, error)
+      new AppError("Error: ", 404, error);
     }
   }
 }

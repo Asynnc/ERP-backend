@@ -12,6 +12,10 @@ class CreateRoleService {
 
     const roleRepository = getRepository(Role);
 
+    if(name.length <= 0 || description.length <= 0){
+      throw new AppError("You must provide a name and description to role.");
+    }
+
     const checkRoleExists = await roleRepository.findOne(
       { where: { name } }
     )
