@@ -30,7 +30,8 @@
 
 ### Description
 
-> ( COOMING SOON )
+This is a project to study the development of an ERP system based on repositories
+following SOLID principles.
 
 
 ### API Collection - Insomnia V4

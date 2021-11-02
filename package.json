@@ -9,8 +9,8 @@
     "build": "tsc",
     "start": "node dist/app.js",
     "test": "set NODE_ENV=test&&jest",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
+    "typeorm": "tsnd ./node_modules/typeorm/cli.js",
+    "dev": "ts-node-dev --inspect --transpile-only --respawn --ignore-watch node_modules src/server.ts"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.3.0",
