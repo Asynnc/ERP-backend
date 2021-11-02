@@ -46,7 +46,7 @@ following SOLID principles.
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54373473?v=4" width="150px;" alt=""/>
  <br />
 
- <sub><b>Antônio Bernardino da Silva</b></sub></a>
+ <sub><b>Antônio Bernardino da Silva</b></sub></a> <a href="https://dev.to/tonybsilvadev/" title="Dev.to".> </a>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
